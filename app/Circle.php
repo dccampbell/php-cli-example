@@ -18,14 +18,16 @@ class Circle extends Geometry
 
     public function contains(Point $point): bool
     {
-        // todo
-        return false;
+        $distSq = ($point->x - $this->center->x) ** 2 + ($point->y - $this->center->y) ** 2;
+        $radSq = $this->radius ** 2;
+        return $distSq <= $radSq;
     }
 
     public function intersects(Circle $circle): bool
     {
-        // todo
-        return false;
+        $distSq = ($circle->center->x - $this->center->x) ** 2 + ($circle->center->y - $this->center->y) ** 2;
+        $radSq = ($circle->radius + $this->radius) ** 2;
+        return $distSq <= $radSq;
     }
 
     public function toArray()
