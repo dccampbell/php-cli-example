@@ -1,0 +1,36 @@
+{
+    "license": "MIT",
+    "authors": [
+        { "name": "David C. Campbell", "email": "david@dccampbell.com" }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "laravel-zero/framework": "^5.8"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.0",
+        "phpunit/phpunit": "^7.5",
+        "roave/security-advisories": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "bin": [ "php-cli-example" ],
+    "scripts": {
+        "build": "@php ./php-cli-example app:build php-cli-example.phar"
+    }
+}
