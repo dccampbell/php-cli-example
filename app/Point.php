@@ -2,7 +2,7 @@
 
 namespace App;
 
-class Point
+class Point extends Geometry
 {
     /** @var float $x */
     public $x;
@@ -14,5 +14,10 @@ class Point
     {
         $this->x = $x;
         $this->y = $y;
+    }
+
+    public function toArray()
+    {
+        return [$this->x, $this->y];
     }
 }

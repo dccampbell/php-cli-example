@@ -2,7 +2,7 @@
 
 namespace App;
 
-class Line
+class Line extends Geometry
 {
     /** @var Point $a */
     public $a;
@@ -20,5 +20,10 @@ class Line
     {
         // todo
         return false;
+    }
+
+    public function toArray()
+    {
+        return [$this->a->toArray(), $this->b->toArray()];
     }
 }

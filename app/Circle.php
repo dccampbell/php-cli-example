@@ -2,7 +2,7 @@
 
 namespace App;
 
-class Circle
+class Circle extends Geometry
 {
     /** @var Point $center */
     public $center;
@@ -28,9 +28,8 @@ class Circle
         return false;
     }
 
-    public function contains(Point $point): bool
+    public function toArray()
     {
-        // todo
-        return false;
+        return [$this->center->toArray(), $this->radius];
     }
 }
