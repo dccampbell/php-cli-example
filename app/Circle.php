@@ -16,6 +16,7 @@ class Circle extends Geometry
         $this->radius = $radius;
     }
 
+    /** Calculates if the given point exists within the circle's area. */
     public function contains(Point $point): bool
     {
         $distSq = ($point->x - $this->center->x) ** 2 + ($point->y - $this->center->y) ** 2;
@@ -23,6 +24,7 @@ class Circle extends Geometry
         return $distSq <= $radSq;
     }
 
+    /** Calculates if the given circle overlaps with this circle's area. */
     public function intersects(Circle $circle): bool
     {
         $distSq = ($circle->center->x - $this->center->x) ** 2 + ($circle->center->y - $this->center->y) ** 2;

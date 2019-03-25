@@ -12,10 +12,11 @@ abstract class AbstractCommand extends Command
 {
     protected function inputError(string $msg = ''): void
     {
+        // print the help output for the command
         $this->call('help', ['command_name' => $this->getName(), 'format' => 'raw']);
-        if (empty($msg)) {
-            $msg = "Input Error: {$this->getName()} {$this->getArguments()}";
-        }
+
+        // throw exception w/ error message
+        $msg = empty($msg) ? "Input Error: {$this->getName()} {$this->getArguments()}" : $msg;
         throw new InvalidArgumentException($msg);
     }
 
